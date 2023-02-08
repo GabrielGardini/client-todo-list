@@ -1,24 +1,61 @@
 import logo from './logo.svg';
 import './App.css';
 
+import {BrowserRouter, Routes, Route, Link} from "react-router-dom"
+import Register from './Register';
+import UserContext from './UserContext';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import Login from './Login';
+
 function App() {
+
+const [email, setEmail] = useState("");
+
+useEffect(()=>{
+
+  axios.get('http://localhost:4000/user', {withCredentials:true})
+  .then(response =>{
+    setEmail(response.data.email);
+  })
+}, [])
+
+function logout(){
+  axios.post('http://localhost:4000/logout', {}, {withCredentials:true})
+  .then(()=>{
+    setEmail('')
+  })
+}
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={{email, setEmail}}>
+      <BrowserRouter>
+      <div>
+        {!!email &&(
+          <div>
+            Logged in as {email}
+            <button onClick={() => logout()}>Log out</button>
+          </div>
+        )}
+        {!email && (
+          <div>Not logged in</div>
+        )}
+      </div>
+      <hr/>
+        <div>
+          <Link to={'/'}>Home</Link> |
+          <Link to={'/login'}>Login</Link> |
+          <Link to={'/register'}>Register</Link>
+        </div>
+        <Routes>
+          <Route path="/register" element={<Register/>}/>
+          <Route path="/login" element={<Login/>}/>
+        </Routes>
+        <hr/>
+      </BrowserRouter>
+    </UserContext.Provider >
+      
   );
 }
 
