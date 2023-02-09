@@ -18,7 +18,7 @@ function loginUser(e){
     e.preventDefault();
 
     const data ={email, password};
-    axios.post('https://api-todo-list-gabrielgardini.vercel.app/login', data, {withCredentials:true})
+    axios.post('https://api-todo-list-six.vercel.app/login', data, {withCredentials:true})
     .then(response => {
         user.setEmail(response.data.email);
         setEmail('');

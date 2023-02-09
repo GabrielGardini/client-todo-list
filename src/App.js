@@ -15,14 +15,14 @@ const [email, setEmail] = useState("");
 
 useEffect(()=>{
 
-  axios.get('https://api-todo-list-gabrielgardini.vercel.app/user', {withCredentials:true})
+  axios.get('https://api-todo-list-six.vercel.app/user', {withCredentials:true})
   .then(response =>{
     setEmail(response.data.email);
   })
 }, [])
 
 function logout(){
-  axios.post('https://api-todo-list-gabrielgardini.vercel.app/logout', {}, {withCredentials:true})
+  axios.post('https://api-todo-list-six.vercel.app/logout', {}, {withCredentials:true})
   .then(()=>{
     setEmail('')
   })
@@ -41,7 +41,7 @@ function logout(){
           </>
         )}
         {!!email && (
-          <a onClick={e => {e.preventDefault();logout();}}>Logout</a>
+          <a onClick={() => logout()}>Logout</a>
         )}
         </nav>
         <main>
