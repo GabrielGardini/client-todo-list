@@ -1,11 +1,14 @@
 import { useState, useContext } from "react";
 import axios from 'axios';
 import UserContext from "./UserContext";
+import {Navigate} from "react-router-dom";
+
 
 function Register(){
 
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
+const [redirect, setRedirect] = useState(false);
 
 
 const user = useContext(UserContext);
@@ -19,9 +22,14 @@ function registerUser(e){
         user.setEmail(response.data.email);
         setEmail('');
         setPassword('');
+        setRedirect(true)
     })
     
 }   
+
+if(redirect){
+    return <Navigate to={'/'}/>
+}
 
     return(
         <form action="" onSubmit={e => registerUser(e)}>
