@@ -10,7 +10,7 @@ const [todos, setTodos] = useState([]);
 
 
 useEffect(() => {
-    axios.get('https://api-todo-list-six.vercel.app/todos', {withCredentials: true})
+    axios.get('https://api-todo-list-six.vercel.app/todos', {id:userInfo.id}, {withCredentials: true})
     .then(response => {
         setTodos(response.data);
     })
@@ -23,7 +23,8 @@ if(!userInfo.email){
 
 function addTodo (e){
     e.preventDefault();
-    axios.put('https://api-todo-list-six.vercel.app/todos', {text: inputValue}, {withCredentials: true} )
+    console.log(userInfo.id);
+    axios.put('https://api-todo-list-six.vercel.app/todos', {text: inputValue, id:userInfo.id}, {withCredentials: true} )
     .then(response => {
 
         setTodos([...todos, response.data]);
@@ -33,7 +34,7 @@ function addTodo (e){
 
 
 function updateTodo(todo){
-    axios.post('https://api-todo-list-six.vercel.app/todos', {id: todo._id, done: !todo.done}, {withCredentials: true})
+    axios.post('https://api-todo-list-six.vercel.app/todos', {id: todo._id, done: !todo.done, userId: userInfo.id}, {withCredentials: true})
     .then(() => {
 
         

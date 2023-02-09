@@ -6,6 +6,7 @@ import { Navigate } from "react-router-dom";
 function Login(){
 
 const [email, setEmail] = useState('');
+const [id, setId] = useState('');
 const [password, setPassword] = useState('');
 const [loginError, setLoginError] = useState(false);
 const [redirect, setRedirect] = useState(false);
@@ -21,7 +22,9 @@ function loginUser(e){
     axios.post('https://api-todo-list-six.vercel.app/login', data, {withCredentials:true})
     .then(response => {
         user.setEmail(response.data.email);
+        user.setId(response.data.id);
         setEmail('');
+        setId('');
         setPassword('');
         setLoginError(false);
         setRedirect(true);
