@@ -18,7 +18,7 @@ const userInfo = useContext(UserContext);
 
 useEffect(()=>{
 
-  axios.get('https://api-todo-list-six.vercel.app/user', {id: userInfo.id}, {withCredentials:true})
+  axios.post('https://api-todo-list-six.vercel.app/user', {id: userInfo.id}, {withCredentials:true})
   .then(response =>{
     setEmail(response.data.email);
   })
