@@ -16,9 +16,9 @@ useEffect(() => {
     })
 },[]);
 
-// if(!userInfo.email){
-//     return 'You need to be logged in to see this page!';
-// }
+if(!userInfo.email){
+    return 'You need to be logged in to see this page!';
+}
 
 
 function addTodo (e){
