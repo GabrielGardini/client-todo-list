@@ -14,14 +14,14 @@ const [email, setEmail] = useState("");
 
 useEffect(()=>{
 
-  axios.get('http://localhost:4000/user', {withCredentials:true})
+  axios.get('https://api-todo-list-gabrielgardini.vercel.app/user', {withCredentials:true})
   .then(response =>{
     setEmail(response.data.email);
   })
 }, [])
 
 function logout(){
-  axios.post('http://localhost:4000/logout', {}, {withCredentials:true})
+  axios.post('https://api-todo-list-gabrielgardini.vercel.app/logout', {}, {withCredentials:true})
   .then(()=>{
     setEmail('')
   })

@@ -14,7 +14,7 @@ function registerUser(e){
     e.preventDefault();
 
     const data ={email, password};
-    axios.post('http://localhost:4000/register', data, {withCredentials:true})
+    axios.post('https://api-todo-list-gabrielgardini.vercel.app/register', data, {withCredentials:true})
     .then(response => {
         user.setEmail(response.data.email);
         setEmail('');
