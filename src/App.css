@@ -65,3 +65,9 @@ button:hover{
   background-color: blue;
   color: white;
 }
+
+.todolist{
+  width: 500px;
+  max-height:400px;
+  overflow-y:scroll;
+}
