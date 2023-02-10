@@ -56,12 +56,12 @@ function updateTodo(todo){
 return(
     <>
     <form onSubmit={e =>addTodo(e)}>
-
+        <h1>Add your Todo's here!</h1>
         <input placeholder={'What do you want to do?'} value={inputValue} onChange={e => setInputValue(e.target.value)}/>
         <ul>
             {todos.map(todo => (
 
-                <div className={"todolist"} style={{marginBottom:3,padding:5,display:"flex", justifyContent:'space-between', alignItems:'center', backgroundColor:"grey", borderRadius:5}}>
+                <div className={"todolist"} style={{marginBottom:6,padding:3,display:"flex", justifyContent:'space-between', alignItems:'center', backgroundColor:"grey", borderRadius:5}}>
                     <h3>{todo.text}</h3>
                     <DeleteOutlineIcon onClick={() => updateTodo(todo)}/>
                 </div>

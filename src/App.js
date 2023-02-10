@@ -30,7 +30,7 @@ function logout(){
     setEmail('')
   })
 }
-
+const today = new Date();
 
   return (
     <UserContext.Provider value={{email, setEmail, id, setId}}>
@@ -54,6 +54,7 @@ function logout(){
             <Route path="/login" element={<Login/>}/>
           </Routes>
         </main>
+        <h6 style={{justifyContent:"center", display:"flex"}}>{`Developed by Gabriel Gardini ${today.getFullYear()}`}</h6>
       </BrowserRouter>
     </UserContext.Provider >
       
