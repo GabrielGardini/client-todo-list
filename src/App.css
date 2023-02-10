@@ -64,7 +64,7 @@ button{
 }
 button:hover{
   transition: background-color .5s, color 1.3s;
-  background-color: blue;
+  background-color: rgba(0,56,168,1);
   color: white;
 }
 
