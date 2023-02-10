@@ -29,13 +29,13 @@ main{
   background-color: #f0f0f0;
   padding: 15px;
   border-radius: 5px;
-  max-height:400px;
-  overflow-y:scroll;
 
 }
 
 ul{
   padding-left:0;
+  max-height:300px;
+  overflow-y:scroll;
 }
 
 ul li{
@@ -65,10 +65,4 @@ button:hover{
   transition: background-color .5s, color 1.3s;
   background-color: blue;
   color: white;
-}
-
-.todolist{
-  width: 500px;
-  max-height:400px;
-  overflow-y:scroll;
 }
