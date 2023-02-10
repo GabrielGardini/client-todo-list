@@ -18,25 +18,27 @@ const [redirect, setRedirect] = useState(false);
 const user = useContext(UserContext);
 
 function loginUser(e){
-    e.preventDefault();
+    if(email!==""){
 
-    const data ={email, password};
-    axios.post('https://api-todo-list-six.vercel.app/login', data, {withCredentials:true})
-    .then(response => {
-        user.setEmail(response.data.email);
-        user.setId(response.data.id);
-        setEmail('');
-        setId('');
-        setPassword('');
-        setLoginError(false);
-        setRedirect(true);
-
-    }).catch(() => {
-        console.log("teste")
-        setLoginError(true)
-    })
-}   
-
+        e.preventDefault();
+        
+        const data ={email, password};
+        axios.post('https://api-todo-list-six.vercel.app/login', data, {withCredentials:true})
+        .then(response => {
+            user.setEmail(response.data.email);
+            user.setId(response.data.id);
+            setEmail('');
+            setId('');
+            setPassword('');
+            setLoginError(false);
+            setRedirect(true);
+            
+        }).catch(() => {
+            setLoginError(true)
+        })
+    }   
+}
+    
     if(redirect){
         return (
             <Navigate to={'/home'}/>
