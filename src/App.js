@@ -39,7 +39,7 @@ const today = new Date();
         <Link to={'/'}>Home</Link>
         {!email && (
           <>
-            <Link sx={{backgroundColor: "blue"}} to={'/login'}>Login</Link> 
+            <Link to={'/login'}>Login</Link> 
             <Link to={'/register'}>Register</Link>
           </>
         )}
@@ -54,7 +54,7 @@ const today = new Date();
             <Route path="/login" element={<Login/>}/>
           </Routes>
         </main>
-        <h6 style={{justifyContent:"center", display:"flex"}}>{`Developed by Gabriel Gardini ${today.getFullYear()}`}</h6>
+        <h3 style={{ color:'white',justifyContent:"center", display:"flex"}}>{`Developed by Gabriel Gardini ${today.getFullYear()}`}</h3>
       </BrowserRouter>
     </UserContext.Provider >
       
