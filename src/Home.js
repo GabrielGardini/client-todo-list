@@ -47,6 +47,10 @@ function updateTodo(todo){
         })
         setTodos([...newTodos])
     });
+    axios.post('https://api-todo-list-six.vercel.app/todoslist', {id:userInfo.id}, {withCredentials: true})
+    .then(response => {
+        setTodos(response.data);
+    })
 }
 
 return(
