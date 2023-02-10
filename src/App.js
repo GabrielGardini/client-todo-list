@@ -56,7 +56,7 @@ const today = new Date();
             <Route path="/login" element={<Login/>}/>
           </Routes>
         </main>
-        <h3 style={{ color:'white',justifyContent:"center", display:"flex"}}>{`Developed by Gabriel Gardini ${today.getFullYear()}`}</h3>
+        <h3 style={{ color:'white',justifyContent:"center", display:"flex"}}>{`Developed by Gabriel Gardini. ${today.getFullYear()}`}</h3>
       </BrowserRouter>
     </UserContext.Provider >
       
