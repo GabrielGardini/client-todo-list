@@ -42,14 +42,21 @@ function loginUser(e){
     }
 
     return(
+        <>
         <form action="" onSubmit={e => loginUser(e)}>
-            {loginError && (
-                <div>LOGIN ERROR! Wrong password!</div>
-            )}
+            <h1>Welcome!</h1>
+            <h2>Log in to see your todo's</h2>
             <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)}/><br/>
             <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} /><br/>
+            <p>Don't have an account yet? Just click in Register!</p>
             <button type="submit">Log in</button>
+            {loginError && (
+                <div className={"error"}>
+                    <h2 style={{ padding:10,marginTop: 50, color: 'red', backgroundColor:"#f0f0f0", borderRadius:5}}>LOGIN ERROR! Wrong email or password!</h2>
+                </div>
+                )}
         </form>
+                </>
     )
 }
 

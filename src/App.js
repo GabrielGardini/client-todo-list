@@ -39,7 +39,7 @@ function logout(){
         <Link to={'/'}>Home</Link>
         {!email && (
           <>
-            <Link to={'/login'}>Login</Link> 
+            <Link sx={{backgroundColor: "blue"}} to={'/login'}>Login</Link> 
             <Link to={'/register'}>Register</Link>
           </>
         )}

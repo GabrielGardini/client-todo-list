@@ -36,6 +36,8 @@ if(redirect){
 
     return(
         <form action="" onSubmit={e => registerUser(e)}>
+            <h1>Welcome!</h1>
+            <h2>Create an accout to start adding your Todo's!</h2>
             <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)}/><br/>
             <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} /><br/>
             <button type="submit">Register</button>
