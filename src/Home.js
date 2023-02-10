@@ -61,7 +61,7 @@ return(
         <ul>
             {todos.map(todo => (
 
-                <div className={"todolist"} style={{marginBottom:6,padding:3,display:"flex", justifyContent:'space-between', alignItems:'center', backgroundColor:"grey", borderRadius:5}}>
+                <div className={"todolist"} style={{marginBottom:6,padding:3,display:"flex", justifyContent:'space-between', alignItems:'center', backgroundColor:"rgba(155,79,150,1)", borderRadius:5, color:"white"}}>
                     <h3>{todo.text}</h3>
                     <DeleteOutlineIcon onClick={() => updateTodo(todo)}/>
                 </div>
