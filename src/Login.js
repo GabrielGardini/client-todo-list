@@ -39,7 +39,7 @@ function loginUser(e){
 
     if(redirect){
         return (
-            <Navigate to={'/'}/>
+            <Navigate to={'/home'}/>
         )
     }
 
@@ -54,7 +54,7 @@ function loginUser(e){
             <button type="submit">Log in</button>
             {loginError && (
                 <div className={"error"}>
-                    <h2 style={{ padding:10,marginTop: 50, color: 'red', backgroundColor:"#f0f0f0", borderRadius:5}}>LOGIN ERROR! Wrong email or password!</h2>
+                    <h2 style={{ padding:10,marginTop: 150, color: 'red', backgroundColor:"#f0f0f0", borderRadius:5}}>LOGIN ERROR! Wrong email or password!</h2>
                 </div>
                 )}
         </form>

@@ -31,7 +31,7 @@ function registerUser(e){
 }   
 
 if(redirect){
-    return <Navigate to={'/'}/>
+    return <Navigate to={'/home'}/>
 }
 
     return(
