@@ -24,7 +24,7 @@ nav a:hover{
 }
 main{
   width: 500px;
-  height:450px;
+  height:400px;
   margin:10px auto;
   text-align: center;
   background-color: #f0f0f0;
@@ -35,7 +35,8 @@ main{
 
 ul{
   padding-left:0;
-  max-height:290px;
+  height: 300px;
+  max-height:330px;
   overflow-y:scroll;
 }
 

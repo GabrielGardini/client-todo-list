@@ -18,10 +18,8 @@ const [redirect, setRedirect] = useState(false);
 const user = useContext(UserContext);
 
 function loginUser(e){
+    e.preventDefault();
     if(email!==""){
-
-        e.preventDefault();
-        
         const data ={email, password};
         axios.post('https://api-todo-list-six.vercel.app/login', data, {withCredentials:true})
         .then(response => {
