@@ -67,3 +67,8 @@ button:hover{
   background-color: blue;
   color: white;
 }
+
+.todolist{
+  box-shadow:  10px 5px 5px rgba(155,79,150,1);
+
+}
