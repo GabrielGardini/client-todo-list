@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import UserContext from "./UserContext";
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 function Home(){
 
@@ -56,10 +57,14 @@ return(
         <ul>
             {todos.map(todo => (
 
-                <li>
-                    <input type={'checkbox'} checked={todo.done} onClick={() => updateTodo(todo)}/>
-                    {todo.text}
-                </li>
+                <div style={{display:"flex", justifyContent:'center', alignItems:'center'}}>
+                    <h3>{todo.text}</h3>
+                    <DeleteOutlineIcon onClick={() => updateTodo(todo)}/>
+                </div>
+                // <li>
+                //     <input type={'checkbox'} checked={todo.done} onClick={() => updateTodo(todo)}/>
+                //     {todo.text}
+                // </li>
                 ))}
         </ul>
     </form>
