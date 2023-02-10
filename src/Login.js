@@ -34,9 +34,10 @@ function loginUser(e){
             setRedirect(true);
             
         }).catch(() => {
-            setLoginError(true)
         })
-    }   
+    }else{
+    setLoginError(true) 
+    }
 }
     
     if(redirect){
